@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  # Information about you and the paths home manager should manage.
   home.username = "vanyaeccles";
   home.homeDirectory = "/Users/vanyaeccles";
 
@@ -17,38 +16,29 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-    pkgs.gnumake
-    pkgs.graphviz
-    pkgs.bat
-    pkgs.pyenv
-    pkgs.awscli2
-    pkgs.devenv
-    pkgs.cachix
-    pkgs.pandoc
-    pkgs.keepassxc
-    pkgs.rectangle
-    pkgs.iterm2
-    pkgs.direnv
-    pkgs.ghc
-    pkgs.htop
-    pkgs.postgresql_14
-    pkgs.k9s
-    pkgs.nodejs
-    pkgs.rustup
-    pkgs.terraform
-    pkgs.yamllint
-    pkgs.zsh 
-    pkgs.neofetch    
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+  home.packages = with pkgs; [
+    gnumake
+    graphviz
+    bat
+    pyenv
+    awscli2
+    devenv
+    cachix
+    pandoc
+    keepassxc
+    rectangle
+    iterm2
+    direnv
+    ghc
+    htop
+    postgresql_14
+    k9s
+    nodejs
+    rustup
+    terraform
+    yamllint
+    zsh 
+    neofetch    
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -91,10 +81,6 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
-  programs.zsh.initExtra = "if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-  fi";
 
   nixpkgs.config = {
     allowUnfree = true;
