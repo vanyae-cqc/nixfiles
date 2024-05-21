@@ -86,6 +86,17 @@
     allowUnfree = true;
   };
 
+  programs.git = {
+    enable = true;
+    userName = "vanyae-cqc";
+    userEmail = "vanya.eccles@quantinuum.com";
+
+    extraConfig = {
+      # Add a Git alias to run git-browse.sh
+      alias.browse = "!~/nixfiles/git-browse.sh";
+    };
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
