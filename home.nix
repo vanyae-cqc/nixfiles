@@ -94,6 +94,8 @@
     extraConfig = {
       # Add a Git alias to run git-browse.sh
       alias.browse = "!~/nixfiles/git-browse.sh";
+      # alias to list branches in the current repo
+      alias.lb = "for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'";
     };
   };
 
