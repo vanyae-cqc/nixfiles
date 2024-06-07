@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Information about you and the paths home manager should manage.
@@ -80,6 +80,16 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+  };
+
+  home.sessionPath = [
+    "${config.home.homeDirectory}/nixfiles/scripts"
+  ];
+
+  home.activation = {
+    rectangle = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      ${config.home.homeDirectory}/nixfiles/scripts/open_rectangle.sh &
+    '';
   };
 
   nixpkgs.config = {
