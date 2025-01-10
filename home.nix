@@ -35,10 +35,10 @@
     k9s
     nodejs
     rustup
-    terraform
     yamllint
     zsh 
     neofetch    
+    uv
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -106,6 +106,7 @@
       alias.browse = "!~/nixfiles/git-browse.sh";
       # alias to list branches in the current repo
       alias.lb = "for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'";
+      alias.main = "!git checkout main && git pull origin main";
     };
   };
 
