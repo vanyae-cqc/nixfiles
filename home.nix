@@ -1,5 +1,10 @@
 { config, pkgs, lib, ... }:
 
+let
+  pkgsUnstable = import <nixpkgs-unstable> {};
+
+in 
+
 {
   # Information about you and the paths home manager should manage.
   home.username = "vanyaeccles";
@@ -37,8 +42,9 @@
     rustup
     yamllint
     zsh 
-    neofetch    
-    uv
+    neofetch
+
+    pkgsUnstable.uv
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
