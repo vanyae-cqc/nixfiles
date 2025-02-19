@@ -7,8 +7,8 @@ in
 
 {
   # Information about you and the paths home manager should manage.
-  home.username = "vanyaeccles";
-  home.homeDirectory = "/Users/vanyaeccles";
+  home.username = "vanya.eccles";
+  home.homeDirectory = "/Users/vanya.eccles";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
