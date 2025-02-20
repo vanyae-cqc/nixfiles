@@ -130,9 +130,9 @@ in
     package = pkgs.vscode;
 
     extensions = with pkgs.vscode-extensions; [
-        bbenoist.Nix
+        bbenoist.nix
         justusadam.language-haskell
-        rust-lang.rust-analyzer
+        #rust-lang.rust-analyzer # not working currently
         ms-python.vscode-pylance
         ms-python.python
         ms-toolsai.jupyter
