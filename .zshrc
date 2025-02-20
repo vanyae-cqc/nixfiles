@@ -5,7 +5,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/vanyaeccles/.oh-my-zsh"
+export ZSH="/Users/vanya.eccles/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="essembeh"
@@ -39,3 +39,5 @@ poetrysh() {
 eval "$(direnv hook zsh)"
 
 alias cat='bat --paging=never'
+
+eval "$(starship init zsh)"

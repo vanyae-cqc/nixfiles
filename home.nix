@@ -22,29 +22,38 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    arc-browser
     gnumake
     graphviz
     bat
     pyenv
     awscli2
     devenv
+    starship
     cachix
     pandoc
     keepassxc
     rectangle
     iterm2
     direnv
+    poetry
     ghc
     htop
     postgresql_14
     k9s
+    kubectl
     nodejs
     rustup
     yamllint
-    zsh 
+    zsh
+    oh-my-zsh
     neofetch
+    vscode
 
     pkgsUnstable.uv
+
+    #HUGRverse
+    llvmPackages_14.libllvm
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -113,6 +122,25 @@ in
       # alias to list branches in the current repo
       alias.lb = "for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'";
       alias.main = "!git checkout main && git pull origin main";
+    };
+  };
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode;
+
+    extensions = with pkgs.vscode-extensions; [
+        bbenoist.Nix
+        justusadam.language-haskell
+        rust-lang.rust-analyzer
+        ms-python.vscode-pylance
+        ms-python.python
+        ms-toolsai.jupyter
+        github.copilot
+        github.copilot-chat
+    ];
+    userSettings = {
+        "terminal.integrated.fontFamily" = "Hack";
     };
   };
 
