@@ -49,6 +49,7 @@ in
     oh-my-zsh
     neofetch
     vscode
+    eksctl
 
     pkgsUnstable.uv
 
@@ -138,6 +139,10 @@ in
         ms-toolsai.jupyter
         github.copilot
         github.copilot-chat
+        ms-vscode.makefile-tools
+        github.vscode-github-actions
+        eamodio.gitlens
+
     ];
     userSettings = {
         "terminal.integrated.fontFamily" = "Hack";
